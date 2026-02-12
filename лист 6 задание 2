@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+struct Point {
+    int x;
+    int y;
+};
+
+int main() {
+    int n;
+    cin >> n;
+    
+    Point points[100]; // массив структур (максимум 100 точек)
+    
+    // Считываем координаты
+    for (int i = 0; i < n; i++) {
+        cin >> points[i].x >> points[i].y;
+    }
+    
+    // Суммируем координаты
+    int sumX = 0;
+    int sumY = 0;
+    
+    for (int i = 0; i < n; i++) {
+        sumX = sumX + points[i].x;
+        sumY = sumY + points[i].y;
+    }
+    
+    //Центр тяжести - среднее арифметическое
+    double centerX = (double)sumX / n;
+    double centerY = (double)sumY / n;
+    
+    cout << centerX << " " << centerY << endl;
+    
+    return 0;
+}
